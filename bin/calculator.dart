@@ -11,6 +11,7 @@ double _readNumber(String label) {
   }
 }
 
+//Buat rumus matematika pake fungsi dengan parameter
 void penjumlahan(double a, double b) {
   print('Hasil = ${a + b}');
 }
@@ -62,37 +63,35 @@ void menu() {
       print('\nAnda memilih operasi Pembagian Bulat');
     } else if (pilih == '6') {
       print('\nAnda memilih operasi Modulus');
+    } else{
+      print('Pilihan tidak dikenal.');
+      return;
     }
+    
     final a = _readNumber('Masukkan angka pertama');
     final b = _readNumber('Masukkan angka kedua');
 
     switch (pilih) {
       case '1':
-        // print('Hasil: ${a + b}');
         penjumlahan(a, b);
         break;
       case '2':
-        // print('Hasil: ${a - b}');
         pengurangan(a, b);
         break;
       case '3':
-        // print('Hasil: ${a * b}');
         perkalian(a, b);
         break;
       case '4':
-        // print('Hasil: ${a / b}');
         pembagian(a, b);
         break;
       case '5':
-        // print('Hasil: ${a ~/ b}');
         pembagianBulat(a, b);
         break;
       case '6':
-        // print('Hasil: ${a % b}');
         sisaBagi(a, b);
         break;
       default:
-        print('Pilihan tidak dikenal.');
+        print('Menu yang Anda pilih, tidak ada. Silahkan pilih menu yang sesuai.');
     }
   }
 }
