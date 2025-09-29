@@ -66,7 +66,7 @@ void printResult(pilih) {
 }
 
 void menu() {
-  while (true) {
+  while (true) { //Memulai loop yang terus menerus dengan while(true)
     //Awal loop
     print('\n=== Kalkulator Sederhana ===');
     print('1) Penjumlahan');
@@ -82,7 +82,6 @@ void menu() {
     /* Membuat aturan logika untuk membatasi pilihan yang dipilih:
        Kalau pilihannya selain dari pilihan 1–6, langsung ke default.*/
     if (pilih == '7') {
-      //Start Choosing Option
       print('Bye!');
       return;
     }
