@@ -58,8 +58,8 @@ void menu() {
       //Ini untuk pengganti default di switch case-nya. Karena udah saya hapus.
     }
 
-    /*
-    // Kalau pilihannya di luar 1–6 langsung ke default
+    /* Membuat aturan logika untuk membatasi pilihan yang dipilih
+    // Kalau pilihannya selain dari pilihan 1–6, langsung ke default
     if (!(["1","2","3","4","5","6"].contains(pilih))) {
       print('Menu yang Anda pilih tidak ada. Silahkan pilih menu yang sesuai.');
       continue; // Kembali ke awal loop
