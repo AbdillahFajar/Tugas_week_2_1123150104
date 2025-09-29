@@ -11,28 +11,28 @@ double _readNumber(String label) {
   }
 }
 
-double penjumlahan(double a, double b) {
-  return a + b;
+void penjumlahan(double a, double b) {
+  print('Hasil = ${a + b}');
 }
 
-double pengurangan(double a, double b) {
-  return a - b;
+void pengurangan(double a, double b) {
+  print('Hasil = ${a - b}');
 }
 
-double perkalian(double a, double b) {
-  return a * b;
+void perkalian(double a, double b) {
+  print('Hasil = ${a * b}');
 }
 
-double pembagian(double a, double b) {
-  return a / b;
+void pembagian(double a, double b) {
+  print('Hasil = ${a / b}');
 }
 
-int pembagianBulat(double a, double b) {
-  return a ~/ b;
+void pembagianBulat(double a, double b) {
+  print('Hasil = ${a ~/ b}');
 }
 
-double sisaBagi(double a, double b) {
-  return a % b;
+void sisaBagi(double a, double b) {
+  print('Hasil = ${a % b}');
 }
 
 void menu() {
@@ -69,27 +69,27 @@ void menu() {
     switch (pilih) {
       case '1':
         // print('Hasil: ${a + b}');
-        print(penjumlahan(a, b));
+        penjumlahan(a, b);
         break;
       case '2':
         // print('Hasil: ${a - b}');
-        print(pengurangan(a, b));
+        pengurangan(a, b);
         break;
       case '3':
         // print('Hasil: ${a * b}');
-        print(perkalian(a, b));
+        perkalian(a, b);
         break;
       case '4':
         // print('Hasil: ${a / b}');
-        print(pembagian(a, b));
+        pembagian(a, b);
         break;
       case '5':
         // print('Hasil: ${a ~/ b}');
-        print(pembagianBulat(a, b));
+        pembagianBulat(a, b);
         break;
       case '6':
         // print('Hasil: ${a % b}');
-        print(sisaBagi(a, b));
+        sisaBagi(a, b);
         break;
       default:
         print('Pilihan tidak dikenal.');
