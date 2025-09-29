@@ -26,6 +26,7 @@ double sisaBagi(double a, double b) => a % b;
 
 void menu() {
   while (true) {
+    //Awal loop
     print('\n=== Kalkulator Sederhana ===');
     print('1) Penjumlahan');
     print('2) Pengurangan');
@@ -51,7 +52,40 @@ void menu() {
       print('\nAnda memilih operasi Pembagian Bulat');
     } else if (pilih == '6') {
       print('\nAnda memilih operasi Modulus');
+    }else{
+      print('Menu yang Anda pilih, tidak ada. Silahkan pilih menu yang sesuai.');
+      continue;
+      //Ini untuk pengganti default di switch case-nya. Karena udah saya hapus.
     }
+
+    /*
+    // Kalau pilihannya di luar 1–6 langsung ke default
+    if (!(["1","2","3","4","5","6"].contains(pilih))) {
+      print('Menu yang Anda pilih tidak ada. Silahkan pilih menu yang sesuai.');
+      continue; // Kembali ke awal loop
+    }
+
+    // Tampilkan info pilihan
+    switch (pilih) {
+      case '1':
+        print('\nAnda memilih operasi Penjumlahan');
+        break;
+      case '2':
+        print('\nAnda memilih operasi Pengurangan');
+        break;
+      case '3':
+        print('\nAnda memilih operasi Perkalian');
+        break;
+      case '4':
+        print('\nAnda memilih operasi Pembagian');
+        break;
+      case '5':
+        print('\nAnda memilih operasi Pembagian Bulat');
+        break;
+      case '6':
+        print('\nAnda memilih operasi Modulus');
+        break;
+    }*/
     
     final a = _readNumber('Masukkan angka pertama');
     final b = _readNumber('Masukkan angka kedua');
@@ -75,8 +109,8 @@ void menu() {
       case '6':
         print('Hasil =  ${a % b}');
         break;
-      default:
-        print('Menu yang Anda pilih, tidak ada. Silahkan pilih menu yang sesuai.');
+      // default:
+      // print("Menu yang Anda pilih, tidak ada. Silahkan pilih menu yang sesuai.");
     }
   }
 }
