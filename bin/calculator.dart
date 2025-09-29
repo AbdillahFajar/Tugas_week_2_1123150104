@@ -11,30 +11,18 @@ double _readNumber(String label) {
   }
 }
 
-//Buat rumus matematika pake fungsi dengan parameter
-void penjumlahan(double a, double b) {
-  print('Hasil = ${a + b}');
-}
+//Buat rumus matematika pake fungsi lambda
+double penjumlahan(double a, double b) => a + b;
 
-void pengurangan(double a, double b) {
-  print('Hasil = ${a - b}');
-}
+double pengurangan(double a, double b) => a - b;
 
-void perkalian(double a, double b) {
-  print('Hasil = ${a * b}');
-}
+double perkalian(double a, double b) => a * b;
 
-void pembagian(double a, double b) {
-  print('Hasil = ${a / b}');
-}
+double pembagian(double a, double b) => a / b;
 
-void pembagianBulat(double a, double b) {
-  print('Hasil = ${a ~/ b}');
-}
+int pembagianBulat(double a, double b) => a ~/ b;
 
-void sisaBagi(double a, double b) {
-  print('Hasil = ${a % b}');
-}
+double sisaBagi(double a, double b) => a % b;
 
 void menu() {
   while (true) {
@@ -73,22 +61,22 @@ void menu() {
 
     switch (pilih) {
       case '1':
-        penjumlahan(a, b);
+        print('Hasil: ${a + b}');
         break;
       case '2':
-        pengurangan(a, b);
+       print('Hasil: ${a - b}');
         break;
       case '3':
-        perkalian(a, b);
+        print('Hasil: ${a * b}');
         break;
       case '4':
-        pembagian(a, b);
+        print('Hasil: ${a / b}');
         break;
       case '5':
-        pembagianBulat(a, b);
+        print('Hasil: ${a ~/ b}');
         break;
       case '6':
-        sisaBagi(a, b);
+        print('Hasil: ${a % b}');
         break;
       default:
         print('Menu yang Anda pilih, tidak ada. Silahkan pilih menu yang sesuai.');
