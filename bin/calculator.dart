@@ -58,22 +58,22 @@ void menu() {
 
     switch (pilih) {
       case '1':
-        print('Hasil: ${a + b}');
+        print('Hasil =  ${a + b}');
         break;
       case '2':
-       print('Hasil: ${a - b}');
+       print('Hasil =  ${a - b}');
         break;
       case '3':
-        print('Hasil: ${a * b}');
+        print('Hasil =  ${a * b}');
         break;
       case '4':
-        print('Hasil: ${a / b}');
+        print('Hasil =  ${a / b}');
         break;
       case '5':
-        print('Hasil: ${a ~/ b}');
+        print('Hasil =  ${a ~/ b}');
         break;
       case '6':
-        print('Hasil: ${a % b}');
+        print('Hasil =  ${a % b}');
         break;
       default:
         print('Menu yang Anda pilih, tidak ada. Silahkan pilih menu yang sesuai.');
