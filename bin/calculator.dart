@@ -51,9 +51,6 @@ void menu() {
       print('\nAnda memilih operasi Pembagian Bulat');
     } else if (pilih == '6') {
       print('\nAnda memilih operasi Modulus');
-    } else{
-      print('Pilihan tidak dikenal.');
-      return;
     }
     
     final a = _readNumber('Masukkan angka pertama');
