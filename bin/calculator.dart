@@ -35,7 +35,7 @@ double _readNumber(String label) {
 - input.trim(), hapus spasi di depan atau belakang string (inputan)
 - double.tryParse(input.trim()), mencoba mengubah input yang string menjadi tipe data double
 - kalau berhasil diubah, hasilnya jadi angka (double)
-- kalau gagal, hasilnya akan null
+- kalau gagal, hasilnya akan mengeluarkan output baris-10. Proses parsing gagal ini, karena user memasukkan inputan kosong atau inputan selain angka.
 
 7. Baris 9: Aturan yang menyatakan bahwa, jika parsing (pengubahan) inputan yang string tadi ke tipe data double (double.tryParse(input.trim())) berhasil, 
             maka langsung kembalikan (return) angka itu (value) sekaligus keluar dari fungsi _readNumber
