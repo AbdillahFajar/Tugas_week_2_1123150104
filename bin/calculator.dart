@@ -1,9 +1,11 @@
 import 'dart:io';
+/*dart:io, adalah library bawaan (core library) dari Dart yang dipakai untuk keperluan I/O (Input/Output) berbasis synchronous & asynchronous. 
+  Biasanya dipakai di aplikasi command line (console) atau server (bukan di Flutter UI langsung).*/
 
 double _readNumber(String label) {
-  while (true) {
+  while (true) { 
     stdout.write('$label: ');
-    final input = stdin.readLineSync();
+    final input = stdin.readLineSync();  
     if (input == null) continue;
     final value = double.tryParse(input.trim());
     if (value != null) return value;
@@ -11,18 +13,50 @@ double _readNumber(String label) {
   }
 }
 
-//Buat rumus matematika pake fungsi lambda
-double penjumlahan(double a, double b) => a + b;
+/*Penjelasan pembuatan fungsi _readNumber secara per baris:
+1. Baris 3:
+- double, tipe data hasil kembalian fungsi. Jadi, fungsi ini pasti akan mengembalikan nilai double
+- tanda undescore (_) di depan tulisan readNumber artinya, fungsi itu bersifat private dan hanya bisa dipakai di file calculator.dart ini saja
+- parameter String label, teks yang dipakai sebagai prompt untuk menampilkan tulisan yang dimasukkan di kodingan
 
-double pengurangan(double a, double b) => a - b;
+2. Baris 4: Loop tanpa batas. Program akan terus mengulang isi loop sampai ada return yang menghentikannya.
 
-double perkalian(double a, double b) => a * b;
+3. Baris 5: Menampilkan teks ke layar (CLI), tanpa pindah baris.
 
-double pembagian(double a, double b) => a / b;
+4. Baris 6: 
+- stdin.readLineSync();, membaca input dari keyboard (CLI (Command Line Interface))
+- Hasil inputan akan jadi string. Dan akan jadi null kalau gak ketik apapun, lalu tekan enter
+- Final, artinya kalau udah sekali isi, maka gak bisa diubah lagi nilainya
 
-int pembagianBulat(double a, double b) => a ~/ b;
+5. Baris 7: Kalau inputnya kosong, lewati loopnya dan mulai lagi dari awal (continue), 
+            supaya program gak ngalamin crash kalau user cuma pencet enter tanpa ketik apapun
 
-double sisaBagi(double a, double b) => a % b;
+6. Baris 8:
+- input.trim(), hapus spasi di depan atau belakang string (inputan)
+- double.tryParse(input.trim()), mencoba mengubah input yang string menjadi tipe data double
+- kalau berhasil diubah, hasilnya jadi angka (double)
+- kalau gagal, hasilnya akan null
+
+7. Baris 9: Aturan yang menyatakan bahwa, jika parsing (pengubahan) inputan yang string tadi ke tipe data double (double.tryParse(input.trim())) berhasil, 
+            maka langsung kembalikan (return) angka itu (value) sekaligus keluar dari fungsi _readNumber
+
+8. Baris 10: Adalah output yang akan keluar jika proses parsing gagal. Dalam kodenya, menurut pandangan amatir seperti saya, output ini dibungkus else, tapi di sini enggak. 
+            Karena di blok if (value != null) sudah ada return, jadi, else tidak diperlukan lagi untuk membungkus output tersebut, alasannya adalah supaya kode bisa kelihatan lebih clean (bersih).
+            Cara ini bekerja sama halnya dengan jika else diikutsertakan. Jadi gak ada bedanya, mau ada else atau enggak.
+*/
+
+//Buat rumus matematika pake fungsi lambda yang dikombinasikan dengan named parameter menggunakan kurung kurawal dan required (wajib diisi)
+double penjumlahan({required double a,required double b}) => a + b;
+
+double pengurangan({required double a,required double b}) => a - b;
+
+double perkalian({required double a,required double b}) => a * b;
+
+double pembagian({required double a,required double b}) => a / b;
+
+int pembagianBulat({required double a,required double b}) => a ~/ b;
+
+double sisaBagi({required double a,required double b}) => a % b;
 
 //Mengubah isi pada fungsi choosingoption, dari logika if-else ke switch case return
 String choosingOption(pilih) {
@@ -49,27 +83,28 @@ String choosingOption(pilih) {
 }
 
 //Fungsi printResult untuk menampilkan hasil dari angka yang dimasukkan user. Fungsi ini menggunakan fungsi void yang tidak mengembalikan nilai (return)
+//Memanggil fungsi operasi matematikanya, menggunakan aturan named parameter, yaitu menyebutkan nama parameternya dahulu, barulah menyebutkan variabel a dan b sebagai nilainya.
 void printResult(pilih) {
   final a = _readNumber('Masukkan angka pertama');
   final b = _readNumber('Masukkan angka kedua');
   switch (pilih) {
     case '1':
-      print('Hasil = ${penjumlahan (a, b)}');
+      print('Hasil = ${penjumlahan (a: a, b: b)}');
       break;
     case '2':
-      print('Hasil = ${pengurangan (a, b)}');
+      print('Hasil = ${pengurangan (a: a, b: b)}');
       break;
     case '3':
-      print('Hasil = ${perkalian (a, b)}');
+      print('Hasil = ${perkalian (a: a, b: b)}');
       break;
     case '4':
-      print('Hasil = ${pembagian (a, b)}');
+      print('Hasil = ${pembagian (a: a, b: b)}');
       break;
     case '5':
-      print('Hasil = ${pembagianBulat (a, b)}');
+      print('Hasil = ${pembagianBulat (a: a, b: b)}');
       break;
     case '6':
-      print('Hasil = ${sisaBagi (a, b)}');
+      print('Hasil = ${sisaBagi (a: a, b: b)}');
       break;
   }
 }
